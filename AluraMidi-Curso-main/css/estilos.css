@@ -1,0 +1,84 @@
+/* Definición de variables CSS */
+:root {
+  --gris: #aaa; /* Definir color gris para reutilizarlo */
+  --rojo: #e93d50; /* Definir color rojo para reutilizarlo */
+  --rojo-oscuro: #af303f; /* Definir tono más oscuro de rojo para reutilizarlo */
+  --blanco: #fff; /* Definir color blanco para reutilizarlo */
+  --luz: rgb(229, 255, 0); /* Definir un tono de luz amarilla para reutilizarlo */
+}
+
+/* Estilos del cuerpo del documento HTML */
+body {
+  align-items: center; /* Centrar verticalmente el contenido */
+  /*azul celeste */
+  background: #5a5bf3;/* Acá se logra establecer un degradado de fondo */
+  background: -moz-linear-gradient(left, #5a5bf3 0%, #91e7d9 100%); 
+  background: -webkit-linear-gradient(left, #5a5bf3 0%,#91e7d9 100%); 
+  background: linear-gradient(to right, #5a5bf3 0%,#91e7d9 100%);
+
+  display: flex; /* Usar flexbox para el diseño */
+  justify-content: center; /* Centrar horizontalmente el contenido */
+  flex-direction: column; /* Organizar elementos en columnas */
+  font-family: 'Montserrat', sans-serif; /* Especificar fuente de texto */
+  min-height: 100vh; /* Establecer altura mínima del cuerpo al 100% del viewport */
+}
+
+/* Estilos del título h1 */
+h1 {
+  color: var(--blanco); /* Usar color blanco */
+  margin-bottom: 20px; /* Agregar espacio en la parte inferior */
+  font-size: 2rem; /* Tamaño de fuente grande */
+  font-weight: 600; /* Grosor de fuente seminegrita */
+}
+
+/* Estilos del contenedor del teclado de notas */
+.teclado {
+  background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%); /* Establecer un degradado de fondo */
+  box-shadow: 6px 8px 0 6px #666, 10px 10px 10px #000; /* Agregar sombra al teclado */
+  border-radius: 30px; /* Redondear los bordes del teclado */
+  display: flex; /* Usar flexbox para el diseño */
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en varias líneas */
+  justify-content: center; /* Centrar horizontalmente los elementos */
+  gap: 10px; /* Espacio entre los elementos hijos */
+  padding: 10px; /* Agregar espacio interno */
+  max-width: 600px; /* Establecer el ancho máximo del teclado */
+  margin: 0 auto; /* Centrar el teclado horizontalmente */
+}
+
+/* Estilos de las teclas del teclado */
+.tecla {
+  background-color: var(--blanco); /* Usar color de fondo blanco */
+  border-radius: 30px; /* Redondear los bordes de las teclas */
+  box-shadow: 3px 3px 0 var(--gris); /* Agregar una sombra */
+  color: var(--rojo); /* Usar color rojo para el texto */
+  cursor: pointer; /* Cambiar el cursor al pasar por encima */
+  height: 120px; /* Altura de las teclas */
+  font-size: 1.75em; /* Tamaño de fuente grande */
+  font-weight: bold; /* Grosor de fuente negrita */
+  line-height: 120px; /* Alinear verticalmente el texto */
+  text-align: center; /* Alinear horizontalmente el texto */
+  width: calc((100% - 30px) / 3); /* Calcular el ancho de las teclas para que haya 3 teclas por fila con espacio entre ellas */
+}
+
+/* Estilos de las teclas activas */
+.tecla.activa,
+.tecla:active {
+  background-color: var(--rojo); /* Cambiar color de fondo al ser activa */
+  border: 4px solid var(--rojo); /* Agregar borde al ser activa */
+  box-shadow: 3px 3px 0 var(--rojo-oscuro) inset; /* Agregar sombra interna al ser activa */
+  color: var(--blanco); /* Cambiar color de texto al ser activa */
+  outline: none; /* Quitar contorno al hacer clic */
+}
+
+/* Estilos de las teclas enfocadas */
+.tecla.focus,
+.tecla:focus {
+  outline: none; /* Quitar contorno al enfocarse */
+  box-shadow: 1px 1px 10px var(--luz); /* Agregar un resplandor al enfocarse */
+}
+
+/* Estilos de las teclas activas enfocadas */
+.tecla.active:focus,
+.tecla:active:focus {
+  box-shadow: 3px 3px 0 var(--rojo-oscuro) inset, 1px 1px 10px var(--luz); /* Agregar sombra interna y resplandor al estar activa y enfocada */
+}
